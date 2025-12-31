@@ -17,12 +17,12 @@ use App\Http\Controllers\TalentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // トップページ
-Route::get('/map', [MapController::class, 'index'])->name('map.index');
+Route::get('/', [MapController::class, 'index'])->name('map.index');
 
 // 施設情報
 
