@@ -98,6 +98,7 @@ class MapController extends Controller
     public function hazards_update(Request $request, Hazard $hazard)
     {
         $data = $request->only('name', 'type', 'description', 'latitude', 'longitude', 'reporter', 'phone');
+        $data['resolved'] = $request->has('resolved') ? true : false;
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('hazards', 'public');
